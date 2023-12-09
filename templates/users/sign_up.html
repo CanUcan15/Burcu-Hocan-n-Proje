@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<h1>Üye Ol</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Üye Ol</button>
+</form>
+<br>
+<a href="{% url 'users:sign-in' %}">Giriş Yap</a>
+{% endblock %}

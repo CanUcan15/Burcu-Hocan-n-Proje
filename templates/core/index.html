@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<h1>Hoşgeldiniz!</h1>
+<div class="top-posts">
+    <p>Burada bu haftanın en iyi yazılarından bazılarını görebilirsiniz!</p>
+    <ul>
+        {% for post in object_list %}
+        <li><a href="{% url 'post-details' post.pk %}">{{ post.title }}</a> - {{post.author}} <br>
+        {{post.body}}</li><br>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
